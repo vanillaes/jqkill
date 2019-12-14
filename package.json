@@ -23,7 +23,9 @@
     "preversion": "npm run lint",
     "postversion": "git push --follow-tags"
   },
-  "dependencies": {},
+  "dependencies": {
+    "commander": "^4.0.1"
+  },
   "devDependencies": {
     "semistandard": "^14.2.0"
   }
