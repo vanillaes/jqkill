@@ -1,0 +1,28 @@
+{
+  "name": "jqkill",
+  "version": "0.0.0",
+  "description": "Locate and eliminate jQuery",
+  "keywords": [
+    "jquery",
+    "kill",
+    "utility"
+  ],
+  "repository": "https://github.com/vanillaes/jqkill.git",
+  "author": "Evan Plaice <evanplaice@gmail.com> (http://evanplaice.com/)",
+  "license": "MIT",
+  "bin": {
+    "tape-es": "bin/jqkill"
+  },
+  "type": "module",
+  "engines": {
+    "node": ">=13.2"
+  },
+  "scripts": {
+    "lint": "semistandard",
+    "package": "npx rimraf package && npm pack | tail -n 1 | xargs tar -xf",
+    "preversion": "npm run lint",
+    "postversion": "git push --follow-tags"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
