@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import cli from 'commander';
 import { join } from 'path';
-import { readPkg, match } from '../src/util.js'
+import { readPkg, match } from '../src/util/index.js'
 
 const PKG_PATH = join(new URL(import.meta.url).pathname, '../../package.json');
 const DEFAULT_PATTERN = '**/*.js';
@@ -23,7 +23,7 @@ const DEFAULT_ROOT = process.cwd();
   const root = cli.root ? cli.root : DEFAULT_ROOT;
 
   // glob match to fetch the test file list
-  const tests = await match(pattern, ignore, root);
+  const files = await match(pattern, ignore, root);
 
   // TODO: parse the files
 })().catch(e => {
