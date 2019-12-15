@@ -1,0 +1,22 @@
+#!/usr/bin/env node
+import cli from 'commander';
+import { join } from 'path';
+import { readPkg } from '../src/util/index.js'
+
+const PKG_PATH = join(new URL(import.meta.url).pathname, '../../package.json');
+
+(async () => {
+  const pkg = await readPkg(PKG_PATH);
+
+  cli.version(pkg.version)
+    .arguments('[path]')
+    .parse(process.argv);
+
+  if (!cli.args[0]) {
+    throw Error("Path not defined");
+  }
+
+  // TODO: parse the file
+})().catch(e => {
+  console.error(e);
+});

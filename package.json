@@ -11,7 +11,8 @@
   "author": "Evan Plaice <evanplaice@gmail.com> (http://evanplaice.com/)",
   "license": "MIT",
   "bin": {
-    "jqkill": "bin/jqkill"
+    "jqkill": "bin/jqkill",
+    "jqkill-one": "bin/jqkill-one"
   },
   "type": "module",
   "engines": {
