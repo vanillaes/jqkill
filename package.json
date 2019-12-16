@@ -19,6 +19,8 @@
     "node": ">=13.2"
   },
   "scripts": {
+    "test": "tape-es",
+    "test:watch": "tape-watch-es",
     "lint": "semistandard",
     "package": "npx rimraf package && npm pack | tail -n 1 | xargs tar -xf",
     "preversion": "npm run lint",
@@ -28,6 +30,7 @@
     "commander": "^4.0.1"
   },
   "devDependencies": {
-    "semistandard": "^14.2.0"
+    "semistandard": "^14.2.0",
+    "tape-es": "^1.1.4"
   }
 }
