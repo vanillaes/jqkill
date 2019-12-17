@@ -9,6 +9,7 @@ let errorOutput = [];
 const basic = readFixture('basic.js');
 const semiColon = readFixture('semi-colon.js');
 const row1 = readFixture('row1.js');
+const col1 = readFixture('col1.js');
 
 test('setup', (t) => {
   console.error = e => { errorOutput.push(e); };
@@ -44,6 +45,18 @@ test('Row1 - should display the correct row value', async (t) => {
     '2:0: $(\'#test\')'
   ];
   jqkill(row1);
+
+  t.deepEqual(errorOutput, expect);
+
+  errorOutput = [];
+  t.end();
+});
+
+test('Col1 - should display the correct column value', async (t) => {
+  const expect = [
+    '0:2: $(\'#test\')'
+  ];
+  jqkill(col1);
 
   t.deepEqual(errorOutput, expect);
 
