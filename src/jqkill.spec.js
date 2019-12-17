@@ -8,13 +8,14 @@ let errorOutput = [];
 
 const basic = readFixture('basic.js');
 const semiColon = readFixture('semi-colon.js');
+const row1 = readFixture('row1.js');
 
 test('setup', (t) => {
   console.error = e => { errorOutput.push(e); };
   t.end();
 });
 
-test('Basic - Should work with a basic jQuery selector', async (t) => {
+test('Basic - should work with a basic jQuery selector', async (t) => {
   const expect = [
     '0:0: $(\'#test\')'
   ];
@@ -26,11 +27,23 @@ test('Basic - Should work with a basic jQuery selector', async (t) => {
   t.end();
 });
 
-test('SemiColon - Should work with a semicolon at the end', async (t) => {
+test('SemiColon - should work with a semicolon at the end', async (t) => {
   const expect = [
     '0:0: $(\'#test\')'
   ];
   jqkill(semiColon);
+
+  t.deepEqual(errorOutput, expect);
+
+  errorOutput = [];
+  t.end();
+});
+
+test('Row1 - should display the correct row value', async (t) => {
+  const expect = [
+    '2:0: $(\'#test\')'
+  ];
+  jqkill(row1);
 
   t.deepEqual(errorOutput, expect);
 
