@@ -35,6 +35,9 @@
     "tape-es": "^1.1.4"
   },
   "semistandard": {
-    "parser": "babel-eslint"
+    "parser": "babel-eslint",
+    "ignore": [
+      "**/__test__/*"
+    ]
   }
 }
