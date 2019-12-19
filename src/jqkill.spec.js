@@ -10,6 +10,7 @@ const basic = readFixture('basic.js');
 const chain = readFixture('chain.js');
 const semiColon = readFixture('semi-colon.js');
 const row1 = readFixture('row1.js');
+const row2 = readFixture('row2.js');
 const col1 = readFixture('col1.js');
 const col2 = readFixture('col2.js');
 
@@ -59,6 +60,18 @@ test('Row1 - should display the correct row value', async (t) => {
     '2:0: $(\'#test\')'
   ];
   jqkill(row1);
+
+  t.deepEqual(errorOutput, expect);
+
+  errorOutput = [];
+  t.end();
+});
+
+test('Row2 - should display the correct row value with a chain', async (t) => {
+  const expect = [
+    '2:0: $(\'#test\').html( "Next Step..." )'
+  ];
+  jqkill(row2);
 
   t.deepEqual(errorOutput, expect);
 
