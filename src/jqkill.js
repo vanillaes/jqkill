@@ -3,7 +3,8 @@
  * Search a file's contents for calls to jQuery
  *
  * @param {string} contents the the document contents
- * @returns an object containing 'meta' and 'body' fields
+ * @param {string} path the path of the file being checked
+ * @returns true if jquery statement(s) have been found
  */
 export default function JQKill (contents = '', path = null) {
   let matches = [];
