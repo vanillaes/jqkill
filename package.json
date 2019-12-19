@@ -5,7 +5,8 @@
   "keywords": [
     "jquery",
     "kill",
-    "utility"
+    "utility",
+    "cli"
   ],
   "repository": "https://github.com/vanillaes/jqkill.git",
   "author": "Evan Plaice <evanplaice@gmail.com> (http://evanplaice.com/)",
