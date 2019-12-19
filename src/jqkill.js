@@ -18,7 +18,7 @@ export default function JQKill (contents = '', path = null) {
   let row = 0;
   let col = 0;
 
-  const lexer = RegExp(/\$|\(|\.|\)|\r\n|\n|\r|[^$.)\r\n]+/y);
+  const lexer = RegExp(/\$|\(|\w+\(|\.|\)|\r\n|\n|\r|[^$.)\r\n]+/y);
 
   while ((matches = lexer.exec(contents)) !== null) {
     match = matches[0];
@@ -47,6 +47,11 @@ export default function JQKill (contents = '', path = null) {
       case 1: // is function?
         switch (true) {
           case match === '(':
+            state = 2;
+            hit.value += match;
+            col += match.length;
+            break;
+          case /\w+\(/.test(match):
             state = 2;
             hit.value += match;
             col += match.length;

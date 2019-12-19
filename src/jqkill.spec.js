@@ -7,6 +7,7 @@ const consoleError = console.error;
 let errorOutput = [];
 
 const basic = readFixture('basic.js');
+const chain = readFixture('chain.js');
 const semiColon = readFixture('semi-colon.js');
 const row1 = readFixture('row1.js');
 const col1 = readFixture('col1.js');
@@ -21,6 +22,18 @@ test('Basic - should work with a basic jQuery selector', async (t) => {
     '0:0: $(\'#test\')'
   ];
   jqkill(basic);
+
+  t.deepEqual(errorOutput, expect);
+
+  errorOutput = [];
+  t.end();
+});
+
+test('Chain - should work with a jQuery chain', async (t) => {
+  const expect = [
+    '0:0: $(\'#test\').html( "Next Step..." )'
+  ];
+  jqkill(chain);
 
   t.deepEqual(errorOutput, expect);
 
