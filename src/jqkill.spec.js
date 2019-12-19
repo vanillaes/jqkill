@@ -17,13 +17,14 @@ const row3 = readFixture('row3.js');
 const col1 = readFixture('col1.js');
 const col2 = readFixture('col2.js');
 const col3 = readFixture('col3.js');
+const multi1 = readFixture('multi1.js');
 
 test('setup', (t) => {
   console.error = e => { errorOutput.push(e); };
   t.end();
 });
 
-test('Basic - should work with a basic jQuery selector', async (t) => {
+test('Basic - should work with a jQuery selector', async (t) => {
   const expect = [
     '1:1: $(\'#test\')'
   ];
@@ -150,6 +151,20 @@ test('Col3 - should display the correct column value with a util method', async 
     '1:3: $.csv(\'string\')'
   ];
   jqkill(col3);
+
+  t.deepEqual(errorOutput, expect);
+
+  errorOutput = [];
+  t.end();
+});
+
+test('Multi1 - should work with multiple jQuery selectors', async (t) => {
+  const expect = [
+    '1:1: $(\'#test\')',
+    '2:1: $(\'#test\')',
+    '3:1: $(\'#test\')',
+  ];
+  jqkill(multi1);
 
   t.deepEqual(errorOutput, expect);
 
