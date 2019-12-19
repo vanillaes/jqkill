@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 import cli from 'commander';
 import { join } from 'path';
-import { readPkg, match } from '../src/util/index.js'
+import { basePath, readContents, readPkg, match } from '../src/util/index.js'
+import jqkill from '../src/jqkill.js';
 
 const PKG_PATH = join(new URL(import.meta.url).pathname, '../../package.json');
 const DEFAULT_PATTERN = '**/*.js';
@@ -24,8 +25,15 @@ const DEFAULT_ROOT = process.cwd();
 
   // glob match to fetch the test file list
   const files = await match(pattern, ignore, root);
-
-  // TODO: parse the files
+  files.forEach(async (path) => {
+    const contents = await readContents(path);
+    const fullPath = join(basePath, path);
+    const result = jqkill(contents, fullPath);
+    if (result) {
+      console.error('\x1b[31m%s\x1b[0m %s', 'ERR', 'jQuery found!');
+      process.exitCode = 1;
+    }
+  });
 })().catch(e => {
   console.error(e);
 });
