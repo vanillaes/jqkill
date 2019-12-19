@@ -1,8 +1,8 @@
 [![GitHub Releases](https://img.shields.io/github/release/vanillaes/jqkill.svg)](https://github.com/vanillaes/jqkill/releases)
 [![NPM Release](https://img.shields.io/npm/v/jqkill.svg)](https://www.npmjs.com/package/jqkill)
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/vanillaes/jqkill/master/LICENSE)
-[![Latest Status](https://github.com/vanillaes/csv-es/workflows/Latest/badge.svg)](https://github.com/vanillaes/jqkill/actions)
-[![Release Status](https://github.com/vanillaes/csv-es/workflows/Release/badge.svg)](https://github.com/vanillaes/jqkill/actions)
+[![Latest Status](https://github.com/vanillaes/jqkill/workflows/Latest/badge.svg)](https://github.com/vanillaes/jqkill/actions)
+[![Release Status](https://github.com/vanillaes/jqkill/workflows/Release/badge.svg)](https://github.com/vanillaes/jqkill/actions)
 
 # JQKill
 
