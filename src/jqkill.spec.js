@@ -22,7 +22,7 @@ test('setup', (t) => {
 
 test('Basic - should work with a basic jQuery selector', async (t) => {
   const expect = [
-    '0:0: $(\'#test\')'
+    '1:1: $(\'#test\')'
   ];
   jqkill(basic);
 
@@ -34,7 +34,7 @@ test('Basic - should work with a basic jQuery selector', async (t) => {
 
 test('Chain - should work with a jQuery chain', async (t) => {
   const expect = [
-    '0:0: $(\'#test\').html( "Next Step..." )'
+    '1:1: $(\'#test\').html( "Next Step..." )' 
   ];
   jqkill(chain);
 
@@ -46,7 +46,7 @@ test('Chain - should work with a jQuery chain', async (t) => {
 
 test('Util - should work with a jQuery utility method', async (t) => {
   const expect = [
-    '0:0: $.csv(\'string\')'
+    '1:1: $.csv(\'string\')'
   ];
   jqkill(util);
 
@@ -58,7 +58,7 @@ test('Util - should work with a jQuery utility method', async (t) => {
 
 test('SemiColon - should work with a semicolon at the end', async (t) => {
   const expect = [
-    '0:0: $(\'#test\')'
+    '1:1: $(\'#test\')'
   ];
   jqkill(semiColon);
 
@@ -70,7 +70,7 @@ test('SemiColon - should work with a semicolon at the end', async (t) => {
 
 test('Row1 - should display the correct row value', async (t) => {
   const expect = [
-    '2:0: $(\'#test\')'
+    '3:1: $(\'#test\')'
   ];
   jqkill(row1);
 
@@ -82,7 +82,7 @@ test('Row1 - should display the correct row value', async (t) => {
 
 test('Row2 - should display the correct row value with a chain', async (t) => {
   const expect = [
-    '2:0: $(\'#test\').html( "Next Step..." )'
+    '3:1: $(\'#test\').html( "Next Step..." )'
   ];
   jqkill(row2);
 
@@ -94,7 +94,7 @@ test('Row2 - should display the correct row value with a chain', async (t) => {
 
 test('Col1 - should display the correct column value', async (t) => {
   const expect = [
-    '0:2: $(\'#test\')'
+    '1:3: $(\'#test\')'
   ];
   jqkill(col1);
 
@@ -106,7 +106,7 @@ test('Col1 - should display the correct column value', async (t) => {
 
 test('Col2 - should display the correct column value with a chain', async (t) => {
   const expect = [
-    '0:2: $(\'#test\').html( "Next Step..." )'
+    '1:3: $(\'#test\').html( "Next Step..." )'
   ];
   jqkill(col2);
 

@@ -15,8 +15,8 @@ export default function JQKill (contents = '', path = null) {
     col: null,
     row: null
   };
-  let row = 0;
-  let col = 0;
+  let row = 1;
+  let col = 1;
 
   const lexer = RegExp(/\$|\(|\w+\(|\.|\)|\r\n|\n|\r|[^$.)\r\n]+/y);
 
@@ -35,7 +35,7 @@ export default function JQKill (contents = '', path = null) {
             break;
           case /^(\r\n|\n|\r)$/.test(match):
             state = 0;
-            col = 0;
+            col = 1;
             row += 1;
             break;
           default:
@@ -108,6 +108,6 @@ function kill (hit) {
 
 function flush (hit) {
   hit.value = '';
-  hit.row = null;
-  hit.col = null;
+  hit.row = 1;
+  hit.col = 1;
 }
