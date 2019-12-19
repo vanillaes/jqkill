@@ -19,6 +19,7 @@ const col2 = readFixture('col2.js');
 const col3 = readFixture('col3.js');
 const multi1 = readFixture('multi1.js');
 const multi2 = readFixture('multi2.js');
+const multi3 = readFixture('multi3.js');
 
 test('setup', (t) => {
   console.error = e => { errorOutput.push(e); };
@@ -180,6 +181,20 @@ test('Multi2 - should work with multiple jQuery chains', async (t) => {
     '3:1: $(\'#test\').html( "Next Step..." )'
   ];
   jqkill(multi2);
+
+  t.deepEqual(errorOutput, expect);
+
+  errorOutput = [];
+  t.end();
+});
+
+test('Multi3 - should work with multiple jQuery util methods', async (t) => {
+  const expect = [
+    '1:1: $.csv(\'string\')',
+    '2:1: $.csv(\'string\')',
+    '3:1: $.csv(\'string\')',
+  ];
+  jqkill(multi3);
 
   t.deepEqual(errorOutput, expect);
 
