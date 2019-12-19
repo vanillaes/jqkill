@@ -17,6 +17,7 @@ export default function JQKill (contents = '', path = null) {
   };
   let row = 1;
   let col = 1;
+  let result = false;
 
   const lexer = RegExp(/\$|\(|\w+\(|\.|\)|\r\n|\n|\r|[^$.)\r\n]+/y);
 
@@ -70,6 +71,7 @@ export default function JQKill (contents = '', path = null) {
         switch (true) {
           case match === ')' && lexer.lastIndex === contents.length:
             hit.value += match;
+            result = true;
             kill(hit);
             break;
           case match === ')':
@@ -92,16 +94,19 @@ export default function JQKill (contents = '', path = null) {
             state = 0;
             col = 1;
             row += 1;
+            result = true;
             kill(hit);
             break;
           default:
             state = 0;
+            result = true;
             kill(hit);
             break;
         }
         break;
     }
   }
+  return result;
 }
 
 function kill (hit) {
