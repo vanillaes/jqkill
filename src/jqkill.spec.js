@@ -164,7 +164,7 @@ test('Multi1 - should work with multiple jQuery selectors', async (t) => {
   const expect = [
     '1:1: $(\'#test\')',
     '2:1: $(\'#test\')',
-    '3:1: $(\'#test\')',
+    '3:1: $(\'#test\')'
   ];
   jqkill(multi1);
 
@@ -192,7 +192,7 @@ test('Multi3 - should work with multiple jQuery util methods', async (t) => {
   const expect = [
     '1:1: $.csv(\'string\')',
     '2:1: $.csv(\'string\')',
-    '3:1: $.csv(\'string\')',
+    '3:1: $.csv(\'string\')'
   ];
   jqkill(multi3);
 
