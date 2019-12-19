@@ -56,6 +56,10 @@ export default function JQKill (contents = '', path = null) {
             hit.value += match;
             col += match.length;
             break;
+          case match === '.':
+            state = 1;
+            hit.value += match;
+            break;
           default:
             state = 0;
             flush(hit);

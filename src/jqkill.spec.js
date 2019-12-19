@@ -8,6 +8,7 @@ let errorOutput = [];
 
 const basic = readFixture('basic.js');
 const chain = readFixture('chain.js');
+const util = readFixture('util.js');
 const semiColon = readFixture('semi-colon.js');
 const row1 = readFixture('row1.js');
 const row2 = readFixture('row2.js');
@@ -36,6 +37,18 @@ test('Chain - should work with a jQuery chain', async (t) => {
     '0:0: $(\'#test\').html( "Next Step..." )'
   ];
   jqkill(chain);
+
+  t.deepEqual(errorOutput, expect);
+
+  errorOutput = [];
+  t.end();
+});
+
+test('Util - should work with a jQuery utility method', async (t) => {
+  const expect = [
+    '0:0: $.csv(\'string\')'
+  ];
+  jqkill(util);
 
   t.deepEqual(errorOutput, expect);
 
