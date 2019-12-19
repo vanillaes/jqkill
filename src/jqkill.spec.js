@@ -12,6 +12,7 @@ const util = readFixture('util.js');
 const semiColon = readFixture('semi-colon.js');
 const row1 = readFixture('row1.js');
 const row2 = readFixture('row2.js');
+const row3 = readFixture('row3.js');
 const col1 = readFixture('col1.js');
 const col2 = readFixture('col2.js');
 
@@ -85,6 +86,18 @@ test('Row2 - should display the correct row value with a chain', async (t) => {
     '3:1: $(\'#test\').html( "Next Step..." )'
   ];
   jqkill(row2);
+
+  t.deepEqual(errorOutput, expect);
+
+  errorOutput = [];
+  t.end();
+});
+
+test('Row3 - should display the correct row value with a util method', async (t) => {
+  const expect = [
+    '3:1: $.csv(\'string\')'
+  ];
+  jqkill(row3);
 
   t.deepEqual(errorOutput, expect);
 
