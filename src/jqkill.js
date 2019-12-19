@@ -88,6 +88,12 @@ export default function JQKill (contents = '', path = null) {
             state = 1;
             hit.value += match;
             break;
+          case /^(\r\n|\n|\r)$/.test(match):
+            state = 0;
+            col = 1;
+            row += 1;
+            kill(hit);
+            break;
           default:
             state = 0;
             kill(hit);
@@ -108,6 +114,6 @@ function kill (hit) {
 
 function flush (hit) {
   hit.value = '';
-  hit.row = 1;
-  hit.col = 1;
+  hit.row = null;
+  hit.col = null;
 }

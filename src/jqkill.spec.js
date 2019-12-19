@@ -10,6 +10,7 @@ const basic = readFixture('basic.js');
 const chain = readFixture('chain.js');
 const util = readFixture('util.js');
 const semiColon = readFixture('semi-colon.js');
+const mixed = readFixture('mixed.js');
 const row1 = readFixture('row1.js');
 const row2 = readFixture('row2.js');
 const row3 = readFixture('row3.js');
@@ -36,7 +37,7 @@ test('Basic - should work with a basic jQuery selector', async (t) => {
 
 test('Chain - should work with a jQuery chain', async (t) => {
   const expect = [
-    '1:1: $(\'#test\').html( "Next Step..." )' 
+    '1:1: $(\'#test\').html( "Next Step..." )'
   ];
   jqkill(chain);
 
@@ -63,6 +64,20 @@ test('SemiColon - should work with a semicolon at the end', async (t) => {
     '1:1: $(\'#test\')'
   ];
   jqkill(semiColon);
+
+  t.deepEqual(errorOutput, expect);
+
+  errorOutput = [];
+  t.end();
+});
+
+test('Mixed - should work with all jQuery forms intermixed', async (t) => {
+  const expect = [
+    '1:1: $(\'#test\')',
+    '2:1: $(\'#test\').html( "Next Step..." )',
+    '3:1: $.csv(\'string\')'
+  ];
+  jqkill(mixed);
 
   t.deepEqual(errorOutput, expect);
 
