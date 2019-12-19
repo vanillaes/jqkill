@@ -18,6 +18,7 @@ const col1 = readFixture('col1.js');
 const col2 = readFixture('col2.js');
 const col3 = readFixture('col3.js');
 const multi1 = readFixture('multi1.js');
+const multi2 = readFixture('multi2.js');
 
 test('setup', (t) => {
   console.error = e => { errorOutput.push(e); };
@@ -165,6 +166,20 @@ test('Multi1 - should work with multiple jQuery selectors', async (t) => {
     '3:1: $(\'#test\')',
   ];
   jqkill(multi1);
+
+  t.deepEqual(errorOutput, expect);
+
+  errorOutput = [];
+  t.end();
+});
+
+test('Multi2 - should work with multiple jQuery chains', async (t) => {
+  const expect = [
+    '1:1: $(\'#test\').html( "Next Step..." )',
+    '2:1: $(\'#test\').html( "Next Step..." )',
+    '3:1: $(\'#test\').html( "Next Step..." )'
+  ];
+  jqkill(multi2);
 
   t.deepEqual(errorOutput, expect);
 
