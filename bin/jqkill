@@ -25,15 +25,20 @@ const DEFAULT_ROOT = process.cwd();
 
   // glob match to fetch the test file list
   const files = await match(pattern, ignore, root);
-  files.forEach(async (path) => {
+  var globalResult = false;
+
+  for (const path of files) {
     const contents = await readContents(path);
     const fullPath = join(basePath, path);
     const result = jqkill(contents, fullPath);
-    if (result) {
-      console.error('\x1b[31m%s\x1b[0m %s', 'ERR', 'jQuery found!');
-      process.exitCode = 1;
-    }
-  });
+    if (result) { globalResult = true; }
+  };
+
+  if (globalResult) {
+    process.exitCode = 1;
+    console.error('\x1b[31m%s\x1b[0m %s', 'ERR', 'jQuery found!');
+  }
+
 })().catch(e => {
   console.error(e);
 });
