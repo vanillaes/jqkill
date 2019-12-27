@@ -27,7 +27,8 @@
     "postversion": "git push --follow-tags"
   },
   "dependencies": {
-    "commander": "^4.0.1"
+    "commander": "^4.0.1",
+    "glob": "^7.1.6"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.3",
