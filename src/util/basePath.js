@@ -1,3 +1,3 @@
-import { dirname, join } from 'path';
+import { join } from 'path';
 
-export const basePath = join(dirname(new URL(import.meta.url).pathname), '/');
+export const basePath = join(process.cwd(), '/');
