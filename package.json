@@ -1,12 +1,13 @@
 {
   "name": "jqkill",
   "version": "1.0.4",
-  "description": "Locate and eliminate jQuery",
+  "description": "A linter to help locate and eliminate jQuery",
   "keywords": [
     "jquery",
     "kill",
     "utility",
-    "cli"
+    "cli",
+    "linter"
   ],
   "repository": "https://github.com/vanillaes/jqkill.git",
   "author": "Evan Plaice <evanplaice@gmail.com> (http://evanplaice.com/)",
