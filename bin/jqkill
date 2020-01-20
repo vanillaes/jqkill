@@ -1,16 +1,15 @@
 #!/usr/bin/env node
 import cli from 'commander';
 import { join } from 'path';
-import { basePath, readContents, readPkg, match } from '../src/util/index.js'
 import jqkill from '../src/jqkill.js';
+import { basePath, readContents, readPkg, match } from '../src/util/index.js'
 
-const PKG_PATH = join(new URL(import.meta.url).pathname, '../../package.json');
 const DEFAULT_PATTERN = '**/*.js';
 const DEFAULT_IGNORE = "**/node_modules/**";
 const DEFAULT_ROOT = process.cwd();
 
 (async () => {
-  const pkg = await readPkg(PKG_PATH);
+  const pkg = await readPkg();
 
   cli.version(pkg.version)
     .arguments('[pattern]')
