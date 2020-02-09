@@ -10,14 +10,11 @@
     "linter"
   ],
   "repository": "https://github.com/vanillaes/jqkill.git",
-  "author": "Evan Plaice <evanplaice@gmail.com> (http://evanplaice.com/)",
+  "author": "Evan Plaice <evanplaice@gmail.com> (https://evanplaice.com/)",
   "license": "MIT",
+  "type": "module",
   "bin": {
     "jqkill": "bin/jqkill"
-  },
-  "type": "module",
-  "engines": {
-    "node": ">=13.2"
   },
   "scripts": {
     "test": "tape-es",
@@ -41,5 +38,8 @@
     "ignore": [
       "**/__test__/*"
     ]
+  },
+  "engines": {
+    "node": ">=13.2"
   }
 }
