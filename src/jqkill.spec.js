@@ -1,6 +1,6 @@
 /* eslint-disable no-template-curly-in-string */
 import test from 'tape';
-import jqkill from '../index.js';
+import jqkill from './jqkill.js';
 import { readFixture } from './util/index.js';
 
 const consoleError = console.error;
