@@ -1,14 +1,14 @@
-[![GitHub Releases](https://img.shields.io/github/release/vanillaes/jqkill.svg)](https://github.com/vanillaes/jqkill/releases)
-[![NPM Release](https://img.shields.io/npm/v/jqkill.svg)](https://www.npmjs.com/package/jqkill)
-[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/vanillaes/jqkill/master/LICENSE)
+<h1 align="center">JQKill</h1>
+
+Quickly target, locate, and report each-and-every call to jQuery for elimination. Works like a linter but for jQuery specifically.
+
+[![GitHub Releases](https://badgen.net/github/tag/vanillaes/jqkill)](https://github.com/vanillaes/jqkill/releases)
+[![NPM Release](https://badgen.net/npm/v/jqkill)](https://www.npmjs.com/package/jqkill)
+[![MIT License](https://badgen.net/github/license/vanillaes/jqkill)](https://raw.githubusercontent.com/vanillaes/jqkill/master/LICENSE)
 [![Latest Status](https://github.com/vanillaes/jqkill/workflows/Latest/badge.svg)](https://github.com/vanillaes/jqkill/actions)
 [![Release Status](https://github.com/vanillaes/jqkill/workflows/Release/badge.svg)](https://github.com/vanillaes/jqkill/actions)
 
-# JQKill
-
-Locate each-and-every call to jQuery
-
-*Note: Since this is an ES package, it requires Node >= v13.2*
+<p align="center"><strong>⚠️ Notice: EcmaScript Module Support in Node is Experimental ⚠️</strong></p>
 
 ## Usage
 
