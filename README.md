@@ -8,8 +8,6 @@ Quickly target, locate, and report each-and-every call to jQuery for elimination
 [![Latest Status](https://github.com/vanillaes/jqkill/workflows/Latest/badge.svg)](https://github.com/vanillaes/jqkill/actions)
 [![Release Status](https://github.com/vanillaes/jqkill/workflows/Release/badge.svg)](https://github.com/vanillaes/jqkill/actions)
 
-<p align="center"><strong>⚠️ Notice: EcmaScript Module Support in Node is Experimental ⚠️</strong></p>
-
 ## Usage
 
 ### Arguments

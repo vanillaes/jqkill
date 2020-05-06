@@ -2,10 +2,10 @@
 import cli from 'commander';
 import { join } from 'path';
 import jqkill from '../src/jqkill.js';
-import { basePath, readContents, readPkg, match } from '../src/util/index.js'
+import { basePath, readContents, readPkg, match } from '../src/util/index.js';
 
 const DEFAULT_PATTERN = '**/*.js';
-const DEFAULT_IGNORE = "**/node_modules/**";
+const DEFAULT_IGNORE = '**/node_modules/**';
 const DEFAULT_ROOT = process.cwd();
 
 (async () => {
@@ -19,7 +19,7 @@ const DEFAULT_ROOT = process.cwd();
 
   // prep the input
   const pattern = cli.args[0] ? cli.args[0] : DEFAULT_PATTERN;
-  let ignore = cli.ignore ? cli.ignore : DEFAULT_IGNORE;
+  const ignore = cli.ignore ? cli.ignore : DEFAULT_IGNORE;
   const root = cli.root ? cli.root : DEFAULT_ROOT;
 
   // glob match to fetch the test file list
@@ -31,13 +31,12 @@ const DEFAULT_ROOT = process.cwd();
     const fullPath = join(basePath, path);
     const result = jqkill(contents, fullPath);
     if (result) { globalResult = true; }
-  };
+  }
 
   if (globalResult) {
     process.exitCode = 1;
     console.error('\x1b[31m%s\x1b[0m %s', 'ERR', 'jQuery found!');
   }
-
 })().catch(e => {
   console.error(e);
 });
