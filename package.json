@@ -1,6 +1,6 @@
 {
   "name": "jqkill",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "A linter to help locate and eliminate jQuery",
   "keywords": [
     "jquery",
