@@ -1,3 +1,5 @@
 .github/
 .vscode/
+**/__test__/**
 *.tgz
+CONTRIBUTING.md
