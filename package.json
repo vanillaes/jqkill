@@ -19,7 +19,7 @@
   "scripts": {
     "test": "tape-es",
     "test:watch": "tape-watch-es",
-    "lint": "semistandard",
+    "lint": "esmtk lint",
     "package": "npx rimraf package && npm pack | tail -n 1 | xargs tar -xf",
     "preversion": "npm run lint && npm run test",
     "postversion": "git push --follow-tags"
@@ -29,12 +29,10 @@
     "glob": "^7.1.6"
   },
   "devDependencies": {
-    "babel-eslint": "^10.0.3",
-    "semistandard": "^14.2.0",
+    "esmtk": "^0.1.1",
     "tape-es": "^1.2.5"
   },
-  "semistandard": {
-    "parser": "babel-eslint",
+  "standard": {
     "ignore": [
       "**/__test__/*"
     ]
