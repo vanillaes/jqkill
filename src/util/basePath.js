@@ -1,3 +1,3 @@
-import { join } from 'path';
+import { join } from 'path'
 
-export const basePath = join(process.cwd(), '/');
+export const basePath = join(process.cwd(), '/')
