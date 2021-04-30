@@ -29,15 +29,15 @@
     "glob": "^7.1.6"
   },
   "devDependencies": {
-    "esmtk": "^0.1.1",
+    "esmtk": "^0.5.1",
     "tape-es": "^1.2.5"
+  },
+  "engines": {
+    "node": ">=14"
   },
   "standard": {
     "ignore": [
       "**/__test__/*"
     ]
-  },
-  "engines": {
-    "node": "~14"
   }
 }

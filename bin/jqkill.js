@@ -24,7 +24,7 @@ const DEFAULT_ROOT = process.cwd();
 
   // glob match to fetch the test file list
   const files = await match(pattern, ignore, root)
-  var globalResult = false
+  let globalResult = false
 
   for (const path of files) {
     const contents = await readContents(path)

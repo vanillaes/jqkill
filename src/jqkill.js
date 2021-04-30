@@ -20,7 +20,7 @@ export default function JQKill (contents = '', path = null) {
   let col = 1
   let result = false
 
-  const lexer = RegExp(/\$|\(|\w+\(|\.|\)|\r\n|\n|\r|[^$.)\r\n]+/y)
+  const lexer = /\$|\(|\w+\(|\.|\)|\r\n|\n|\r|[^$.)\r\n]+/y
 
   while ((matches = lexer.exec(contents)) !== null) {
     match = matches[0]
