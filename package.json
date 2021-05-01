@@ -24,12 +24,12 @@
     "postversion": "git push --follow-tags"
   },
   "dependencies": {
-    "commander": "^4.0.1",
+    "commander": "^4.1.1",
     "glob": "^7.1.6"
   },
   "devDependencies": {
-    "esmtk": "^0.5.1",
-    "tape-es": "^1.2.5"
+    "esmtk": "^0.5.3",
+    "tape-es": "^1.2.12"
   },
   "engines": {
     "node": ">=14"
