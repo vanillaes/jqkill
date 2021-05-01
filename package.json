@@ -4,10 +4,9 @@
   "description": "A linter to help locate and eliminate jQuery",
   "keywords": [
     "jquery",
-    "kill",
-    "utility",
+    "nodejs",
     "cli",
-    "linter"
+    "developer-tools"
   ],
   "repository": "https://github.com/vanillaes/jqkill.git",
   "author": "Evan Plaice <evanplaice@gmail.com> (https://evanplaice.com/)",
