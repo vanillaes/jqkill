@@ -2,11 +2,12 @@
 
 Quickly target, locate, and report each-and-every call to jQuery for elimination. Works like a linter but for jQuery specifically.
 
-[![GitHub Releases](https://badgen.net/github/tag/vanillaes/jqkill)](https://github.com/vanillaes/jqkill/releases)
-[![NPM Release](https://badgen.net/npm/v/jqkill)](https://www.npmjs.com/package/jqkill)
-[![MIT License](https://badgen.net/github/license/vanillaes/jqkill)](https://raw.githubusercontent.com/vanillaes/jqkill/master/LICENSE)
-[![Latest Status](https://github.com/vanillaes/jqkill/workflows/Latest/badge.svg)](https://github.com/vanillaes/jqkill/actions)
-[![Release Status](https://github.com/vanillaes/jqkill/workflows/Release/badge.svg)](https://github.com/vanillaes/jqkill/actions)
+<div align="center">
+  <a href="https://github.com/vanillaes/jqkill/releases"><img src="https://badgen.net/github/tag/vanillaes/jqkill" alt="GitHub Release"></a>
+  <a href="https://www.npmjs.com/package/jqkill"><img src="https://badgen.net/npm/v/jqkill" alt="NPM Release"></a>
+  <a href="https://github.com/vanillaes/jqkill/actions"><img src="https://github.com/vanillaes/jqkill/workflows/Latest/badge.svg" alt="Latest Status"></a>
+  <a href="https://github.com/vanillaes/jqkill/actions"><img src="https://github.com/vanillaes/jqkill/workflows/Release/badge.svg" alt="Release Status"></a>
+</div>
 
 ## Usage
 
