@@ -8,7 +8,7 @@
     "cli",
     "developer-tools"
   ],
-  "repository": "https://github.com/vanillaes/jqkill.git",
+  "repository": "https://github.com/vanillaes/jqkill",
   "author": "Evan Plaice <evanplaice@gmail.com> (https://evanplaice.com/)",
   "license": "MIT",
   "type": "module",
