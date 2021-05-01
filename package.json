@@ -1,6 +1,6 @@
 {
   "name": "jqkill",
-  "version": "1.0.18",
+  "version": "1.0.19",
   "description": "Locate all references to jQuery for easy removal",
   "keywords": [
     "jquery",
