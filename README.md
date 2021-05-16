@@ -7,6 +7,8 @@ Quickly target, locate, and report each-and-every call to jQuery for elimination
   <a href="https://www.npmjs.com/package/jqkill"><img src="https://badgen.net/npm/v/jqkill" alt="NPM Release"></a>
   <a href="https://github.com/vanillaes/jqkill/actions"><img src="https://github.com/vanillaes/jqkill/workflows/Latest/badge.svg" alt="Latest Status"></a>
   <a href="https://github.com/vanillaes/jqkill/actions"><img src="https://github.com/vanillaes/jqkill/workflows/Release/badge.svg" alt="Release Status"></a>
+
+  <a href="https://discord.gg/aSWYgtybzV"><img alt="Discord" src="https://img.shields.io/discord/723296249121603604?color=%23738ADB"></a>
 </div>
 
 ## Usage
