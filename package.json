@@ -32,9 +32,6 @@
     "esmtk": "^0.5.13",
     "tape-es": "^1.2.16"
   },
-  "engines": {
-    "node": ">=14"
-  },
   "standard": {
     "ignore": [
       "**/__test__/*"
