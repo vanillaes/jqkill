@@ -1,20 +1,29 @@
 /* eslint-disable no-new-func */
+
+/** @typedef {Object} Hit
+ * @property {string} [path] - the path of the finding
+ * @property {string} value - the source of the finding
+ * @property {number} col - the column of the finding
+ * @property {number} row - the row of the finding of the finding
+*/
+
 /**
  * Search a file's contents for calls to jQuery
  *
  * @param {string} contents the the document contents
- * @param {string} path the path of the file being checked
+ * @param {string | null} path the path of the file being checked
  * @returns true if jquery statement(s) have been found
  */
 export default function JQKill (contents = '', path = null) {
-  let matches = []
+  let matches
   let match = ''
   let state = 0
+  /** @type {Hit} */
   const hit = {
-    path,
+    path: '',
     value: '',
-    col: null,
-    row: null
+    col: -1,
+    row: -1
   }
   let row = 1
   let col = 1
@@ -110,6 +119,10 @@ export default function JQKill (contents = '', path = null) {
   return result
 }
 
+/**
+ * Output the finding
+ * @param {Hit} hit the jquery finding
+ */
 function kill (hit) {
   const path = hit.path
     ? `${hit.path}:`
@@ -118,8 +131,12 @@ function kill (hit) {
   flush(hit)
 }
 
+/**
+ * Reset the finding
+ * @param {Hit} hit the jquery finding
+ */
 function flush (hit) {
   hit.value = ''
-  hit.row = null
-  hit.col = null
+  hit.row = -1
+  hit.col = -1
 }
