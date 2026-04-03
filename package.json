@@ -16,23 +16,19 @@
     "jqkill": "bin/jqkill.js"
   },
   "scripts": {
-    "test": "tape-es",
-    "test:watch": "tape-watch-es",
+    "test": "esmtk test",
     "lint": "esmtk lint",
-    "types": "npx -p typescript tsc src/jqkill.js  -t esnext --allowJS --checkJS --skipLibCheck --noEmit",
-    "package": "npx rimraf package && npm pack | tail -n 1 | xargs tar -xf",
-    "preversion": "npm run lint && npm run test",
+    "types": "esmtk typings",
+    "preview": "esmtk preview",
+    "preversion": "npm test && npm run lint",
     "postversion": "git push --follow-tags"
   },
   "dependencies": {
+    "@vanillaes/esmtk": "^1.2.3",
     "commander": "^4.1.1",
     "glob": "^7.1.6"
   },
-  "devDependencies": {
-    "esmtk": "^0.5.13",
-    "tape-es": "^1.2.16"
-  },
-  "standard": {
+  "lint": {
     "ignore": [
       "**/__test__/*"
     ]

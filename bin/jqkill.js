@@ -2,15 +2,16 @@
 import cli from 'commander'
 import { join } from 'path'
 import jqkill from '../src/jqkill.js'
-import { basePath, readContents, readPkg, match } from '../src/util/index.js'
+import { basePath, readContents, match } from '../src/util/index.js'
+import { createRequire } from 'module'
+const require = createRequire(import.meta.url)
+const pkg = require('../package.json')
 
 const DEFAULT_PATTERN = '**/*.js'
 const DEFAULT_IGNORE = '**/node_modules/**'
 const DEFAULT_ROOT = process.cwd();
 
 (async () => {
-  const pkg = await readPkg()
-
   cli.version(pkg.version)
     .arguments('[pattern]')
     .option('-i, --ignore [value]', 'Ignore files pattern')

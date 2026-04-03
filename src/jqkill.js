@@ -1,18 +1,16 @@
-/* eslint-disable no-new-func */
-
-/** @typedef {Object} Hit
+/**
+ * @typedef {object} Hit
  * @property {string} [path] - the path of the finding
  * @property {string} value - the source of the finding
  * @property {number} col - the column of the finding
  * @property {number} row - the row of the finding of the finding
-*/
+ */
 
 /**
  * Search a file's contents for calls to jQuery
- *
  * @param {string} contents the the document contents
  * @param {string | null} path the path of the file being checked
- * @returns true if jquery statement(s) have been found
+ * @returns {boolean} true if jquery statement(s) have been found
  */
 export default function JQKill (contents = '', path = null) {
   let matches
