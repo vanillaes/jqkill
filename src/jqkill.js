@@ -9,16 +9,16 @@
 /**
  * Search a file's contents for calls to jQuery
  * @param {string} contents the the document contents
- * @param {string | null} path the path of the file being checked
+ * @param {string} path the path of the file being checked
  * @returns {boolean} true if jquery statement(s) have been found
  */
-export default function JQKill (contents = '', path = null) {
+export function jqkill (contents = '', path) {
   let matches
   let match = ''
   let state = 0
   /** @type {Hit} */
   const hit = {
-    path: '',
+    path,
     value: '',
     col: -1,
     row: -1

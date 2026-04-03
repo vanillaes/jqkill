@@ -1,6 +1,6 @@
 import test from 'tape'
-import jqkill from './jqkill.js'
-import { readFixture } from './util/index.js'
+import { jqkill } from '@vanillaes/jqkill'
+import { readFixture } from './index.js'
 
 const consoleError = console.error
 let errorOutput = []

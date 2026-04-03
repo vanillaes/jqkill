@@ -15,22 +15,31 @@
   "bin": {
     "jqkill": "bin/jqkill.js"
   },
+  "exports": {
+    ".": "./src/index.js"
+  },
   "scripts": {
     "test": "esmtk test",
     "lint": "esmtk lint",
-    "types": "esmtk typings",
+    "type": "esmtk type src/index.js",
+    "typings": "esmtk typings src/index.js",
+    "clean": "esmtk clean --typings",
     "preview": "esmtk preview",
-    "preversion": "npm test && npm run lint",
+    "preversion": "npm test && npm run lint && npm run type",
     "postversion": "git push --follow-tags"
   },
   "dependencies": {
     "@vanillaes/esmtk": "^1.2.3",
-    "commander": "^4.1.1",
+    "commander": "^14.0.3",
     "glob": "^7.1.6"
   },
   "lint": {
     "ignore": [
       "**/__test__/*"
     ]
+  },
+  "devDependencies": {
+    "@types/glob": "^8.1.0",
+    "@types/node": "^25.5.0"
   }
 }

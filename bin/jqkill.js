@@ -1,36 +1,42 @@
 #!/usr/bin/env node
-import cli from 'commander'
+import { match, readContents } from '../src/index.js'
+import { jqkill } from '../src/index.js'
+// import { kill } from './commands/index.js'
+import { Command } from 'commander'
 import { join } from 'path'
-import jqkill from '../src/jqkill.js'
-import { basePath, readContents, match } from '../src/util/index.js'
 import { createRequire } from 'module'
 const require = createRequire(import.meta.url)
 const pkg = require('../package.json')
 
-const DEFAULT_PATTERN = '**/*.js'
-const DEFAULT_IGNORE = '**/node_modules/**'
-const DEFAULT_ROOT = process.cwd();
+const program = new Command()
+  .name('jqkill')
+  .description('Locate JQuery for removal')
+  .version(pkg.version)
 
-(async () => {
-  cli.version(pkg.version)
-    .arguments('[pattern]')
-    .option('-i, --ignore [value]', 'Ignore files pattern')
-    .option('-r, --root [value]', 'The root path')
-    .parse(process.argv)
+program
+  .argument('[pattern]', 'Glob pattern', '**/*.js')
+  .option('-i, --ignore <value>', 'Ignore files pattern', '**/node_modules/**')
+  .option('-r, --root [value]', 'The root path', process.cwd())
+  .action((pattern, options) => {
+    kill(pattern, options)
+  })
 
-  // prep the input
-  const pattern = cli.args[0] ? cli.args[0] : DEFAULT_PATTERN
-  const ignore = cli.ignore ? cli.ignore : DEFAULT_IGNORE
-  const root = cli.root ? cli.root : DEFAULT_ROOT
+program.parse(process.argv)
 
+/**
+ * @private
+ * @param {string} pattern glob pattern
+ * @param {object} options jqkill options
+ */
+async function kill (pattern, options) {
   // glob match to fetch the test file list
-  const files = await match(pattern, ignore, root)
+  const files = await match(pattern, options.ignore, options.root)
   let globalResult = false
 
   for (const path of files) {
-    const contents = await readContents(path)
-    const fullPath = join(basePath, path)
-    const result = jqkill(contents, fullPath)
+    const absPath = join(options?.root, path)
+    const contents = await readContents(absPath)
+    const result = jqkill(contents, absPath)
     if (result) { globalResult = true }
   }
 
@@ -38,6 +44,4 @@ const DEFAULT_ROOT = process.cwd();
     process.exitCode = 1
     console.error('\x1b[31m%s\x1b[0m %s', 'ERR', 'jQuery found!')
   }
-})().catch(e => {
-  console.error(e)
-})
+}

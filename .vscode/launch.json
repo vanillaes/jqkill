@@ -6,6 +6,18 @@
       "type": "node",
       "request": "launch",
       "program": "${file}"
+    },
+    {
+      "name": "JQKill",
+      "type": "node",
+      "request": "launch",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceFolder}/bin/jqkill.js",
+      "cwd": "${workspaceFolder}",
+      "args": ["--root", "~/Code/personal/jquery-csv"],
+      "console": "integratedTerminal",
     }
   ]
 }
