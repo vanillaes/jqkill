@@ -21,17 +21,16 @@
   "scripts": {
     "test": "esmtk test",
     "lint": "esmtk lint",
-    "type": "esmtk type src/index.js",
-    "typings": "esmtk typings src/index.js",
+    "type": "esmtk type  --types node src/index.js",
+    "typings": "esmtk typings --types node src/index.js",
     "clean": "esmtk clean --typings",
     "preview": "esmtk preview",
     "preversion": "npm test && npm run lint && npm run type",
     "postversion": "git push --follow-tags"
   },
   "dependencies": {
-    "@vanillaes/esmtk": "^1.2.3",
-    "commander": "^14.0.3",
-    "glob": "^7.1.6"
+    "@vanillaes/esmtk": "^1.4.0",
+    "commander": "^14.0.3"
   },
   "lint": {
     "ignore": [
@@ -39,7 +38,6 @@
     ]
   },
   "devDependencies": {
-    "@types/glob": "^8.1.0",
     "@types/node": "^25.5.0"
   }
 }

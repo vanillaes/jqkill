@@ -1,10 +1,6 @@
 import { readFileSync } from 'node:fs'
-import { access, constants, readFile } from 'node:fs/promises'
+import { access, constants, glob, readFile } from 'node:fs/promises'
 import { join } from 'node:path'
-
-import glob from 'glob'
-import { promisify } from 'util'
-const globAsync = promisify(glob)
 
 /**
  * Check if a file/folder exists
@@ -28,9 +24,10 @@ async function fileExists (path) {
  * @returns {Promise<string[]>} an array of paths
  */
 export async function match (pattern, ignore, root) {
+  const patterns = pattern.includes(',') ? pattern.split(',') : [pattern]
   const ignores = ignore.includes(',') ? ignore.split(',') : [ignore]
 
-  return globAsync(pattern, { cwd: root, ignore: ignores })
+  return await Array.fromAsync(glob(patterns, { cwd: root, exclude: ignores }))
 }
 
 /**
