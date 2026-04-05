@@ -16,7 +16,10 @@
     "jqkill": "bin/jqkill.js"
   },
   "exports": {
-    ".": "./src/index.js"
+    ".": {
+      "import": "./src/index.js",
+      "types": "./src/index.d.ts"
+    }
   },
   "scripts": {
     "test": "esmtk test",
@@ -32,12 +35,12 @@
     "@vanillaes/esmtk": "^1.4.0",
     "commander": "^14.0.3"
   },
+  "devDependencies": {
+    "@types/node": "^25.5.0"
+  },
   "lint": {
     "ignore": [
       "**/__test__/*"
     ]
-  },
-  "devDependencies": {
-    "@types/node": "^25.5.0"
   }
 }
