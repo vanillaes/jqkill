@@ -1,34 +1,7 @@
 import { readFileSync } from 'node:fs'
-import { access, constants, glob, readFile } from 'node:fs/promises'
+import { readFile } from 'node:fs/promises'
 import { join } from 'node:path'
-
-/**
- * Check if a file/folder exists
- * @param {string} path the path to the file/folder
- * @returns {Promise<boolean>} trie if the file/folder exists, false otherwise
- */
-async function fileExists (path) {
-  try {
-    await access(path, constants.F_OK)
-    return true
-  } catch (error) {
-    return false
-  }
-}
-
-/**
- * Match glob(s)
- * @param {string} pattern glob pattern(s) to match
- * @param {string} ignore glob of pattern(s) to ignore
- * @param {string} root the current working directory
- * @returns {Promise<string[]>} an array of paths
- */
-export async function match (pattern, ignore, root) {
-  const patterns = pattern.includes(',') ? pattern.split(',') : [pattern]
-  const ignores = ignore.includes(',') ? ignore.split(',') : [ignore]
-
-  return await Array.fromAsync(glob(patterns, { cwd: root, exclude: ignores }))
-}
+import { exists } from '@vanillaes/esmtk'
 
 /**
  * Read the contents of a source file
@@ -36,8 +9,8 @@ export async function match (pattern, ignore, root) {
  * @returns {Promise<string>} the source file contents
  */
 export async function readContents (path) {
-  const exists = await fileExists(path)
-  if (!exists) {
+  const pExists = await exists(path)
+  if (!pExists) {
     throw new Error(`${path} No such file or directory`)
   }
 

@@ -1,19 +1,14 @@
 #!/usr/bin/env node
-import { match, readContents } from '../src/index.js'
-import { jqkill } from '../src/index.js'
-// import { kill } from './commands/index.js'
+import { jqkill, readContents } from '../src/index.js'
+import { join } from 'node:path'
+import { match, Package } from '@vanillaes/esmtk'
 import { Command } from 'commander'
-import { join } from 'path'
-import { createRequire } from 'module'
-const require = createRequire(import.meta.url)
-const pkg = require('../package.json')
 
+const pkg = new Package()
 const program = new Command()
   .name('jqkill')
-  .description('Locate JQuery for removal')
-  .version(pkg.version)
-
-program
+  .version(pkg?.version)
+  .description('Locate all references to jQuery for easy removal')
   .argument('[pattern]', 'Glob pattern', '**/*.js')
   .option('-i, --ignore <value>', 'Ignore files pattern', '**/node_modules/**')
   .option('-r, --root [value]', 'The root path', process.cwd())
