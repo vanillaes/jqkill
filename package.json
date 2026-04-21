@@ -24,11 +24,12 @@
   "scripts": {
     "test": "esmtk test",
     "lint": "esmtk lint",
-    "type": "esmtk type  --types node src/index.js",
-    "typings": "esmtk typings --types node src/index.js",
+    "type": "esmtk type  --types node && esmtk type --types node bin/jqkill.js",
+    "build": "esmtk typings --types node",
     "clean": "esmtk clean --typings",
     "preview": "esmtk preview",
     "preversion": "npm test && npm run lint && npm run type",
+    "version": "npm run clean && npm run build && git add **/*.d.ts",
     "postversion": "git push --follow-tags"
   },
   "dependencies": {

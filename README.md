@@ -4,8 +4,9 @@ Quickly target, locate, and report each-and-every call to jQuery for elimination
 
 <div align="center">
   <a href="https://github.com/vanillaes/jqkill/releases"><img src="https://badgen.net/github/tag/vanillaes/jqkill" alt="GitHub Release"></a>
-  <a href="https://www.npmjs.com/package/@vanillaes/jqkill"><img src="https://badgen.net/npm/v/@vanillaes/jqkill?icon=npm" alt="NPM Version"></a>
-  <a href="https://www.npmjs.com/package/@vanillaes/jqkill"><img src="https://badgen.net/npm/dm/@vanillaes/jqkill?icon=npm" alt="NPM Downloads"></a>
+  <a href="https://npmjs.com/package/@vanillaes/jqkill"><img src="https://badgen.net/npm/dw/@vanillaes/jqkill?icon=npm" alt="NPM Weekly Downloads"></a>
+  <a href="https://jsr.io/@vanillaes/jqkill"><img src="https://jsr.io/badges/@vanillaes/jqkill/weekly-downloads" alt="JSR Weekly Downloads"></a>
+  <a href="https://jsr.io/@vanillaes/jqkill"><img src="https://jsr.io/badges/@vanillaes/jqkill/score" alt="JSR Score"></a>
   <a href="https://github.com/vanillaes/jqkill/actions"><img src="https://github.com/vanillaes/jqkill/workflows/Latest/badge.svg" alt="Latest Status"></a>
   <a href="https://github.com/vanillaes/jqkill/actions"><img src="https://github.com/vanillaes/jqkill/workflows/Release/badge.svg" alt="Release Status"></a>
 </div>
