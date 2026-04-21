@@ -7,7 +7,7 @@ import { Command } from 'commander'
 const pkg = new Package()
 const program = new Command()
   .name('jqkill')
-  .version(pkg?.version)
+  .version(pkg?.version || '')
   .description('Locate all references to jQuery for easy removal')
   .argument('[pattern]', 'Glob pattern', '**/*.js')
   .option('-i, --ignore <value>', 'Ignore files pattern', '**/node_modules/**')
@@ -20,16 +20,23 @@ program.parse(process.argv)
 
 /**
  * @private
- * @param {string} pattern glob pattern
- * @param {object} options jqkill options
+ * @param {string} pattern Glob pattern
+ * @param {object} [options] 'jqkill' options
+ * @param {string} [options.cwd] Current working directory
+ * @param {string} [options.ignore] Ignore pattern
  */
-async function kill (pattern, options) {
+async function kill (pattern, options = {}) {
+  const {
+    cwd = process.cwd(),
+    ignore
+  } = options
+
   // glob match to fetch the test file list
-  const files = await match(pattern, options.ignore, options.root)
+  const files = await match(pattern, ignore, cwd)
   let globalResult = false
 
   for (const path of files) {
-    const absPath = join(options?.root, path)
+    const absPath = join(cwd, path)
     const contents = await readContents(absPath)
     const result = jqkill(contents, absPath)
     if (result) { globalResult = true }
