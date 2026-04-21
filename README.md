@@ -15,26 +15,28 @@ Quickly target, locate, and report each-and-every call to jQuery for elimination
 
 ### Arguments
 
-`jqkill [pattern] -i [pattern] -r [path]`
+`jqkill [...options] [files]`
 
-- `[pattern]` - File(s)/glob(s) to match (default `**/*.js`)
-- `--ignore` - Ignore file(s)/glob(s) (default `**/node_modules/**`)
-- `--cwd` - Current working directory
+- `[files]` - File(s)/glob(s) to match (default `**/*.js`)
+- `--ignore <pattern(s)>` - Ignore file(s)/glob(s) (default `**/node_modules/**`)
+- `--cwd <dir>` - Current working directory
 
 ### Basic Usage
 
 Use the defaults
 
 ```sh
+# list all calls to jquery
 jqkill
-```
 
-### Advanced Usage
+# list all calls to jquery (search a typescript files instead)
+jqkill "**/*.ts"
 
-Specify custom parameters
+# list all calls to jquery (ignore test files)
+jqkill --ignore "**/node_modules/**,**/*.spec.js"
 
-```sh
-jqkill "**/*.js" -i "**/lib/**" -r ../kuma/
+# list all calls to jquery (change the current working directory)
+jqkill --cwd src/
 ```
 
 **Note: In Linux/OSX the matcher patterns must be delimited in quotes.**

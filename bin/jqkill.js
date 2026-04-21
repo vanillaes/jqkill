@@ -20,10 +20,10 @@ program.parse(process.argv)
 
 /**
  * @private
- * @param {string} pattern Glob pattern
+ * @param {string} pattern File(s)/glob(s) to match
  * @param {object} [options] 'jqkill' options
  * @param {string} [options.cwd] Current working directory
- * @param {string} [options.ignore] Ignore pattern
+ * @param {string} [options.ignore] Ignore file(s)/glob(s)
  */
 async function kill (pattern = '**/*.js', options = {}) {
   const {
