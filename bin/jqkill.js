@@ -9,9 +9,9 @@ const program = new Command()
   .name('jqkill')
   .version(pkg?.version || '')
   .description('Locate all references to jQuery for easy removal')
-  .argument('[pattern]', 'Glob pattern', '**/*.js')
-  .option('-i, --ignore <value>', 'Ignore files pattern', '**/node_modules/**')
-  .option('-r, --root [value]', 'The root path', process.cwd())
+  .argument('[pattern]', 'File(s)/glob(s) to match (default: **/*.js)')
+  .option('--ignore <pattern>', 'Ignore file(s)/glob(s) (default: **/node_modules/**)')
+  .option('--cwd <dir>', 'Current working directory')
   .action((pattern, options) => {
     kill(pattern, options)
   })
@@ -25,10 +25,10 @@ program.parse(process.argv)
  * @param {string} [options.cwd] Current working directory
  * @param {string} [options.ignore] Ignore pattern
  */
-async function kill (pattern, options = {}) {
+async function kill (pattern = '**/*.js', options = {}) {
   const {
     cwd = process.cwd(),
-    ignore
+    ignore = '**/node_modules/**'
   } = options
 
   // glob match to fetch the test file list

@@ -17,9 +17,9 @@ Quickly target, locate, and report each-and-every call to jQuery for elimination
 
 `jqkill [pattern] -i [pattern] -r [path]`
 
-- `[pattern]` - the file matcher pattern (default `**/*.js`)
-- `-i` | `--ignore` - the ignore matcher pattern (default `**/node_modules/**`)
-- `-r` | `--root` - the root path to run the tests from (default `process.cwd()`)
+- `[pattern]` - File(s)/glob(s) to match (default `**/*.js`)
+- `--ignore` - Ignore file(s)/glob(s) (default `**/node_modules/**`)
+- `--cwd` - Current working directory
 
 ### Basic Usage
 
