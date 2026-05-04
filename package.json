@@ -22,18 +22,18 @@
     }
   },
   "scripts": {
-    "test": "esmtk test",
-    "lint": "esmtk lint",
-    "type": "esmtk type  --types node && esmtk type --types node bin/jqkill.js",
-    "build": "esmtk typings --types node",
-    "clean": "esmtk clean --typings",
-    "preview": "esmtk preview",
+    "test": "es test",
+    "lint": "es lint",
+    "type": "es type  --types node && es type --types node bin/jqkill.js",
+    "build": "es typings --types node",
+    "clean": "es clean --typings",
+    "preview": "es preview",
     "preversion": "npm test && npm run lint && npm run type",
-    "version": "npm run clean && npm run build && git add **/*.d.ts",
+    "version": "npm run clean && npm run build && git add --ignore-errors **/*.d.ts",
     "postversion": "git push --follow-tags"
   },
   "dependencies": {
-    "@vanillaes/esmtk": "^2.5.0",
+    "@vanillaes/esmtk": "^2.7.2",
     "commander": "^14.0.3"
   },
   "devDependencies": {
